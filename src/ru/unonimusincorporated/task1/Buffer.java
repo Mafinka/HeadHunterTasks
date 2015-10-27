@@ -13,10 +13,12 @@ public class Buffer {
     boolean var = false;
     ArrayList<Character> buffer = new java.util.ArrayList<Character>();
 
+    // Буффер текущих символов
     public ArrayList<Character> getBuffer() {
         return buffer;
     }
 
+    // Флаг наличия минуса в выражении
     public boolean isMinus() {
         return minus;
     }
@@ -25,6 +27,7 @@ public class Buffer {
         this.minus = minus;
     }
 
+    // Флаг того, что в буфере содеожатся символы, которые следует интерпретировать как выражение (Expression)
     public boolean isExp() {
         return exp;
     }
@@ -33,6 +36,7 @@ public class Buffer {
         this.exp = exp;
     }
 
+    // Флаг того, что в буффере содержатся символы, которые следует интерпретировать как элемент с переменной (Element)
     public boolean isVar() {
         return var;
     }
@@ -41,10 +45,12 @@ public class Buffer {
         this.var = var;
     }
 
+    // Внезапно, добавление символа в буффер
     public void add(char ch){
         buffer.add(ch);
     }
 
+    // Сброс буффера и всех флагов
     public void clear(){
         buffer.clear();
         var = false;
@@ -52,6 +58,7 @@ public class Buffer {
         minus = false;
     }
 
+    // Есть ли хоть что-то в буффере
     public boolean isEmpty(){
         return buffer.isEmpty();
     }

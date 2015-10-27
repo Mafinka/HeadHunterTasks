@@ -1,12 +1,10 @@
 package ru.unonimusincorporated.task1.Arguments;
 
-import java.io.StringReader;
-
 /**
  * Created by user on 17.10.2015.
  *
  * Класс, описывающий простейший член полинома
- * Может содержать константу (как юольше 0, так и меньше), переменную и степень переменной
+ * Может содержать константу (как больше 0, так и меньше), переменную и степень переменной
  */
 public class Element implements IOperationable {
     long value = 1;
@@ -98,12 +96,14 @@ public class Element implements IOperationable {
         this.power += el.getPower();
     }
 
+    // Возвращение нового экземпляра класса Element
     public Element newElMultiply (Element el){
         Element ref = new Element(this.value,this.var,this.power);
         ref.thisMultiply(el);
         return ref;
     }
 
+    // Должны вернуть слагаемое полмнома в виде числа и/или переменной со степенью
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
@@ -121,6 +121,7 @@ public class Element implements IOperationable {
         return builder.toString();
     }
 
+    // Переопределяем с целью выполнения процедуры сравнения для сортировки. По-видимому, было не обязательно
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -128,8 +129,6 @@ public class Element implements IOperationable {
 
         Element element = (Element) o;
 
-        if (value != element.value) return false;
-        if (var != element.var) return false;
-        return power == element.power;
+        return value == element.value && var == element.var && power == element.power;
     }
 }

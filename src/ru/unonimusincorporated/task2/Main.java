@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 
 /**
  * Created by user on 17.10.2015.
+ * main для второго задания. Можно вызывать отдельно, можно через базовый main
+ * предоставяет возможность ввода-вывода через консоль
  */
 public class Main {
 
@@ -66,15 +68,19 @@ public class Main {
         return -1;
     }
 
+    // Собственно метод решения. Так как решается в лоб за линейное время, не вижу смысла огород городить
     private static int iterationCounter(long n, long m) {
         int counter = 0;
         long doubleN = n * 2;
         long incN = n + 1;
+        // Идем от обратного, уменьшаем m
         while (n < m) {
+            // Случай, когда остается только операция n+2
             if (m == 2 && n == 0) {
                 counter++;
                 break;
             }
+            // Если m делится на 2 нацело, внезапно делим на 2 (2n), иначе уменьшаем на 1 (n + 1)
             if (m >= doubleN) {
                 if (m % 2 == 0) {
                     m /= 2;
@@ -84,6 +90,7 @@ public class Main {
                     counter++;
                 }
             } else {
+                // В остатке только набор опрецаций n + 2 и  n + 1
                 if (m > incN) {
                     m -= 2;
                     counter++;

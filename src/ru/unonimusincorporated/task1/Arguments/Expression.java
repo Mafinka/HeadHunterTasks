@@ -146,6 +146,7 @@ public class Expression implements IOperationable{
         return result;
     }
 
+    // Вспомогательный метод для сброса буфера с соответствующими последствиями
     private IOperationable releaseBuffer(Buffer buffer){
         IOperationable result;
         if (buffer.isExp()){
@@ -158,6 +159,7 @@ public class Expression implements IOperationable{
         return result;
     }
 
+    // Вспомогательный метод для сброса буфера умножения с соответствующими последствиями
     private Polinom releaseMultiplyBuffer (ArrayList<IOperationable> multiplyBuffer){
         Polinom ref = null;
         for (IOperationable elem : multiplyBuffer){
@@ -170,6 +172,7 @@ public class Expression implements IOperationable{
         return ref;
     }
 
+    // Вспомогательный метод для сброса степенного буфера с соответствующими последствиями
     private int releasePowerBuffer (ArrayList<Character> powerBuffer){
         int power = 0;
         for (char x : powerBuffer){
@@ -225,6 +228,7 @@ public class Expression implements IOperationable{
         return null;
     }
 
+    // Проверка на то, что символ является числом
     private boolean isNumber(char ch) {
         // Проверка по кодировке, что это число
         return (int) ch >= (int)'0' && (int) ch <= (int)'9';
@@ -250,6 +254,7 @@ public class Expression implements IOperationable{
         return getPolinom().pow(power);
     }
 
+    // Цель - вернуть полином с раскрытими скобками
     @Override
     public String toString(){
         return getPolinom().toString();

@@ -38,6 +38,8 @@ public class Polinom implements IOperationable{
         // Во избежание хранения элементов с одинаковыми степенями
         // Ищем эелемент с той же степенью переменной. Дороговато, но лучше делать это сразу.
         // Таким образом будем обеспечивать компактность итогового полинома
+        // Из-за этого большие затраты для высоких степней скобки и длинных полиномов,
+        // но придумывать что-то более оптимальное для тестового задания смысла не вижу
         for (Element elem : elements){
             if (elem.getPower() == el.getPower()){
                 ref = elem;
@@ -66,6 +68,7 @@ public class Polinom implements IOperationable{
         return this;
     }
 
+    // Нужно для лперация сложения, так как умеем рабоать только с элементами
     public Polinom add(Element element){
         addElement(element);
         return this;

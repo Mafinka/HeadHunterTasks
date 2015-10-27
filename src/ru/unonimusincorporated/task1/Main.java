@@ -7,10 +7,15 @@ import java.io.InputStreamReader;
 
 /**
  * Created by user on 17.10.2015.
+ * main для первого задания. Можно вызывать отдельно, можно через базовый main
+ * предоставяет возможность ввода-вывода через консоль
  */
 public class Main {
 
     public static void main(String[] args) {
+        // Набор тестовых выраений. Степени скобки выше 500 лучше не использовать, посчитает, но займет это его надолго
+        // Например, выржение с тремя элементами в 2000 степени считалось порядка 10 минут
+
 //        System.out.println(new Expression("-x^2 - 10x + 1 + 21 + (x - 1)(x + 1)"));
 //        System.out.println(new Expression("-x^2 - 10x + 1 + 21"));
 //        System.out.println(new Expression("x(x + 1) + (x(x + 1) - 1)(x + 1) + 1"));

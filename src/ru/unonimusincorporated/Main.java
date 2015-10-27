@@ -4,6 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+
+/**
+ * Created by user on 25.10.2015.
+ * main для обоих заданий. Нафигация между заданиями.
+ * предоставяет возможность ввода-вывода через консоль
+ */
 public class Main {
 
     public static void main(String[] args) {
